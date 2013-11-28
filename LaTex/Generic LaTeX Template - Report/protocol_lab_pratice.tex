@@ -1,0 +1,71 @@
+\documentclass[
+a4paper,        			% alle weiteren Papierformat einstellbar
+DIV=12,
+%landscape,					% Querformat
+11pt,						% Schriftgroesse (12pt, 11pt (Standard))
+BCOR=10mm,					% Bindekorrektur, bspw. 1 cm
+%DIVcalc,				    % fuehrt die Satzspiegelberechnung neu aus s. scrguide 2.4
+oneside,					% einseitiges Layout
+%twocolumn,				    % zweispaltiger Satz
+%openany,					% Kapitel koenen auch auf linken Seiten beginnen
+%halfparskip*,				% Absatzformatierung s. scrguide 3.1
+%headsepline,				% Trennline zum Seitenkopf	
+%footsepline,    			% Trennline zum Seitenfu
+%notitlepage,				% in-page-Titel, keine eigene Titelseite
+%chapterprefix,				% vor Kapitelueberschrift wird "Kapitel Nummer" gesetzt
+%appendixprefix,			% Anhang wird "Anhang" vor die ueerschrift gesetzt
+headings = normal,			% ueerschriften etwas kleiner (smallheadings)
+%idxtotoc,					% Index im Inhaltsverzeichnis
+listof=totoc,				% Abb.- und Tab.verzeichnis im Inhalt
+bibliography=totoc,			% Literaturverzeichnis im Inhalt
+%leqno				    	% Nummerierung von Gleichungen links
+%fleqn,						% Ausgabe von Gleichungen linksbundig
+%draft			    		% ueberlangen Zeilen in Ausgabe gekennzeichnet
+]
+{scrartcl}
+
+%% Include Packages and Settings%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{tex/packAStyle.tex}
+\input{tex/phys_header.tex}
+
+\pagenumbering{alph}
+
+%TitlePage%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{center}
+\textbf{\Large Lab Practice Template\\
+Karlsruhe Institute of Technology\\
+\vspace{1em}
+\huge My template}\\
+\vspace{2em}
+Who ever I was doing this with\\
+Johannes Rebling\\
+\vspace{.2em}
+\today
+\end{center}
+
+\pagestyle{empty}
+\numberwithin{equation}{section} % prepend the section number to all equation numbers, only to use with the amsmath package, has to be here for compatibility reasons...don't ask me...
+
+%Inhaltsverzeichnis%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{plain}
+\pagenumbering{Roman}
+\setcounter{page}{1}
+
+\tableofcontents
+\clearpage
+\pagestyle{fancy}      % Sets fancy header and footer
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\input{tex/1_intro.tex}
+\input{tex/2_exp.tex}
+
+
+
+%% Bibliographie %%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliographystyle{ieeetr}
+\bibliography{tex/bibo}	%insert name of .bib file
+
+\end{document}
