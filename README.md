@@ -5,6 +5,7 @@ This repository contains templates for
 - Latex
 - Illustrator
 - Power Point
+
 as well as pdfs by Jean-Luc Doumont about effective oral presentations and wirting (all rights reserved, you can find them for free at http://www.principiae.be/.
 Most of the stuff is related to science and optics and was created/collected over the years of working with the programms.
 
