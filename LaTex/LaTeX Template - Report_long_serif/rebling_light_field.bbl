@@ -1,0 +1,6 @@
+\begin{thebibliography}{}
+\newcommand{\enquote}[1]{``#1''}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+
+\end{thebibliography}

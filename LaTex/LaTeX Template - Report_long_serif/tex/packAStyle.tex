@@ -1,0 +1,136 @@
+%see files examples for examples...
+
+
+
+%% Set Language %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+%\usepackage[ansinew]{inputenc}
+
+%%\usepackage[ngerman]{babel}
+%%\usepackage[T1]{fontenc}
+%%\usepackage[ansinew]{inputenc}
+
+%% Fonts %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%DO NOT CHANGE ORDER OF THIS!---------------------------------------------------
+\usepackage{lmodern} %enhanced versions of the Computer Modern fonts
+%\renewcommand*{\familydefault}{\sfdefault} %sans serif fonts
+%\usepackage{sfmath} %sans serif equations
+%NOW YOU CAN DO WHAT YOU WANT AGAIN!------------------------------------
+
+%% Typesetting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{epigraph} %good looking quotes
+\usepackage{eurosym} % have a guess :-)
+\usepackage{units} %setting units in a typographically correct way
+\usepackage{upgreek} %upright typesetting for greek symbols (eg. \upmu and \Upmu
+\usepackage[version=3]{mhchem} %use of subscripts within the text environment to typeset chemical formulas, use like \ce{H2O}
+%\usepackage{nicefrac} %nice fractions
+
+
+%% General Stuff %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{amsmath} % AMS Math Package
+\usepackage{amsthm} % Theorem Formatting
+\usepackage{amssymb}	% Math symbols such as \mathbb
+\usepackage{multicol} % Allows for multiple columns
+
+\usepackage{booktabs} %use \toprule, \bottomrule & \midrule in tables
+\usepackage[section]{placeins} %Keep figures within section.
+\usepackage{longtable}
+\usepackage{array} 
+
+%\usepackage[draft]{graphicx} %l�dt nur Platzhalter
+\usepackage{graphicx} %%Zum Laden von Grafiken
+\usepackage{wrapfig} %%Graphics with text wrpping around
+\usepackage{subcaption}  %Placing figures/tables side-by-side,
+\usepackage{caption} %???
+
+%\usepackage[backend=bibtex, sorting=none, style=numeric, natbib=true, sortlocale=en_US, url=false, doi=true, eprint=false]{biblatex}
+%\addbibresource{tex/bibo.bib}
+
+\usepackage{url}	%creates clickable urls by entering \url{http://www.url.de}
+%\usepackage{doi}	%hy­per­link to the tar­get of the DOI.
+
+\usepackage[dvips,a4paper,margin=0.75in,bottom=1 in]{geometry}
+
+%\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+%\usepackage{subcaption} 
+%\usepackage[lofdepth,lotdepth]{subfig}include the subs in the listoffigures and listoftables
+%\usepackage[cmyk]{xcolor} %convert all to CMYK
+
+%% General Page Layout %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\usepackage[left=20mm,					% linker Seitenrand f�rs Binden
+						%right=20mm,					% rechter Seitenrand
+						%top=25mm,					%	oberer Rand
+						%bottom=25mm,				% unterer Rand
+						%footskip=15mm,			% frei f�r Fu�noten
+						%lines=34,					% Rumpf Zeilenauslastung
+						%]{geometry}	
+
+%% Header, Fooder, Chapter Headings and such %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fancyhdr}
+\fancyhead{}  % Delete current header settings
+\fancyfoot{}  % Delete current footer settings         
+
+% pages and right on odd pages
+\fancyhead[L]{\nouppercase{\leftmark}}      % Chapter in the right on even pages
+%\fancyhead[R]{\nouppercase{\rightmark}}     % Section in the left on odd pages
+
+\fancyfoot[C]{\thepage}  % Page number (boldface) centered everywhere
+
+\renewcommand{\headwidth}{\textwidth} %set header width to text  width
+
+%\usepackage[Lenny]{fncychap} %fancy chapter headings						
+
+%% Special Tricks %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Line break after \paragraph{Paragraph Name}						
+\makeatletter
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+  {-3.25ex\@plus -1ex \@minus -.2ex}%
+  {1.5ex \@plus .2ex}%
+  {\normalfont\normalsize\bfseries}}
+\makeatother
+
+% Kreis um Zahl, use as \myCircle{Zahl} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\myCircle}[1]{ \unitlength1ex\begin{picture}(2.5,2.5)%
+\put(0.75,0.75){\circle{2.5}}\put(0.75,0.75){\makebox(0,0){#1}}\end{picture}} 
+
+%% Source code printer for LATEX - Code direct in the .tex file %%%%%%%%%%%%%%%
+\usepackage{listings} %highlighting of all the most common languages 
+\usepackage{color}
+ 
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+ 
+\lstset{ %
+  language=Mathematica,                % the language of the code
+  basicstyle=\footnotesize,           % the size of the fonts that are used for the code
+  numbers=left,                   % where to put the line-numbers
+  numberstyle=\footnotesize,          % the size of the fonts that are used for the line-numbers
+  stepnumber=1,                   % the step between two line-numbers. If it's 1, each line 
+                                  % will be numbered
+  numbersep=5pt,                  % how far the line-numbers are from the code
+  backgroundcolor=\color{white},      % choose the background color. You must add \usepackage{color}
+  showspaces=false,               % show spaces adding particular underscores
+  showstringspaces=false,         % underline spaces within strings
+  showtabs=false,                 % show tabs within strings adding particular underscores
+  %frame=single,                   % adds a frame around the code
+  tabsize=2,                      % sets default tabsize to 2 spaces
+  captionpos=b,                   % sets the caption-position to bottom
+  breaklines=true,                % sets automatic line breaking
+  breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+  title=\lstname,                   % show the filename of files included with \lstinputlisting;
+                                  % also try caption instead of title
+  numberstyle=\tiny\color{gray},        % line number style
+  keywordstyle=\color{blue},          % keyword style
+  commentstyle=\color{dkgreen},       % comment style
+  stringstyle=\color{mauve},         % string literal style
+  escapeinside={\%*}{*)},            % add a comment within your code
+  morekeywords={*,ParallelTable, ParallelMap, Blur, ImageResize, ColorConvert, ImageDimensions, ImageData, ImageTake, ErrorListPlot} % if you want to add more keywords to the set
+}
+
+
+

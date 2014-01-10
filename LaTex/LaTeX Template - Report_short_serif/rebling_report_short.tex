@@ -25,8 +25,10 @@ bibliography=totoc,			% Literaturverzeichnis im Inhalt
 {scrartcl}
 
 %% Include Packages and Settings%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[utf8]{inputenc}
 \input{tex/packAStyle.tex}
 \input{tex/phys_header.tex}
+\usepackage[pdfstartview={FitV},hidelinks]{hyperref} %enables typesetting of followable hyperlinks, leave it HERE! as it NEEDS to be loaded last!
 
 \pagenumbering{alph}
 
@@ -34,12 +36,18 @@ bibliography=totoc,			% Literaturverzeichnis im Inhalt
 \begin{document}
 
 \begin{center}
-\textbf{\Large Lab Practice Template\\
-Karlsruhe Institute of Technology\\
+\large
+\textbf{My Course/Lecture Etc\\
+\vspace{.2em}
+Master in Photonics \& Europhotonics Master's Program\\
 \vspace{1em}
-\huge My template}\\
-\vspace{2em}
-Who ever I was doing this with\\
+\Large
+My Holy Topic}\\
+\vspace{1em}
+\large
+%\textit{``Fancy a nice Quote?''}\\- The Riddler\\
+%\vspace{2em}
+%\Large
 Johannes Rebling\\
 \vspace{.2em}
 \today
@@ -49,23 +57,28 @@ Johannes Rebling\\
 \numberwithin{equation}{section} % prepend the section number to all equation numbers, only to use with the amsmath package, has to be here for compatibility reasons...don't ask me...
 
 %Inhaltsverzeichnis%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\pagestyle{plain}
-\pagenumbering{Roman}
-\setcounter{page}{1}
+%\pagestyle{plain}
+%\pagenumbering{Roman}
+%\setcounter{page}{1}
+ 
+%\tableofcontents
+%\clearpage
 
-\tableofcontents
-\clearpage
-\pagestyle{fancy}      % Sets fancy header and footer
+\pagestyle{plain}      % Sets fancy header and footer
 \pagenumbering{arabic}
 \setcounter{page}{1}
 
-\input{tex/1_intro.tex}
-\input{tex/2_exp.tex}
-
-
+\input{tex/1_main.tex}
 
 %% Bibliographie %%%%%%%%%%%%%%%%%%%%%%%%%%
-\bibliographystyle{ieeetr}
-\bibliography{tex/bibo}	%insert name of .bib file
+%\clearpage
+%\bibliographystyle{myStyle} %bib style created with myBst package
+%\bibliographystyle{no_title} 
+%\bibliography{tex/bibo}	%insert name of .bib file
 
+%\clearpage
+
+%\setcounter{section}{0}%
+%\renewcommand{\thesection}{\Alph{section}}%
+%\input{tex/x_appendix.tex}
 \end{document}

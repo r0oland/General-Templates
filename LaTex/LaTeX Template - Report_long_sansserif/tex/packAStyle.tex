@@ -1,25 +1,66 @@
-%% Set Language %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%see files examples for examples...
+
+
+
+%% Set Language %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[english]{babel}
 \usepackage[T1]{fontenc}
-\usepackage[ansinew]{inputenc}
+%\usepackage[ansinew]{inputenc}
 
-%% Graphics & Colors %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%\usepackage[ngerman]{babel}
+%%\usepackage[T1]{fontenc}
+%%\usepackage[ansinew]{inputenc}
+
+%% Fonts %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%DO NOT CHANGE ORDER OF THIS!---------------------------------------------------
+\usepackage{lmodern} %enhanced versions of the Computer Modern fonts
+\renewcommand*{\familydefault}{\sfdefault} %sans serif fonts
+\usepackage{sfmath} %sans serif equations
+%NOW YOU CAN DO WHAT YOU WANT AGAIN!------------------------------------
+
+%% Typesetting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{epigraph} %good looking quotes
+\usepackage{eurosym} % have a guess :-)
+\usepackage{units} %setting units in a typographically correct way
+\usepackage{upgreek} %upright typesetting for greek symbols (eg. \upmu and \Upmu
+\usepackage[version=3]{mhchem} %use of subscripts within the text environment to typeset chemical formulas, use like \ce{H2O}
+%\usepackage{nicefrac} %nice fractions
+
+
+%% General Stuff %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{amsmath} % AMS Math Package
+\usepackage{amsthm} % Theorem Formatting
+\usepackage{amssymb}	% Math symbols such as \mathbb
+\usepackage{multicol} % Allows for multiple columns
+
+\usepackage{booktabs} %use \toprule, \bottomrule & \midrule in tables
+\usepackage[section]{placeins} %Keep figures within section.
+\usepackage{longtable}
+\usepackage{array} 
 
 %\usepackage[draft]{graphicx} %l�dt nur Platzhalter
 \usepackage{graphicx} %%Zum Laden von Grafiken
 \usepackage{wrapfig} %%Graphics with text wrpping around
-%\usepackage{subfig}  %Placing figures/tables side-by-side,
-\usepackage{subfigure}
-\usepackage{caption}
+\usepackage{subcaption}  %Placing figures/tables side-by-side,
+\usepackage{caption} %???
+
+%\usepackage[backend=bibtex, sorting=none, style=numeric, natbib=true, sortlocale=en_US, url=false, doi=true, eprint=false]{biblatex}
+%\addbibresource{tex/bibo.bib}
+
+\usepackage{url}	%creates clickable urls by entering \url{http://www.url.de}
+%\usepackage{doi}	%hy­per­link to the tar­get of the DOI.
+
+\usepackage[dvips,a4paper,margin=0.75in,bottom=1 in]{geometry}
+
+%\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
 %\usepackage{subcaption} 
 %\usepackage[lofdepth,lotdepth]{subfig}include the subs in the listoffigures and listoftables
+%\usepackage[cmyk]{xcolor} %convert all to CMYK
 
-\usepackage[cmyk]{xcolor} %convert all to CMYK
+%% General Page Layout %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-%% General Page Layout %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%\usepackage[%left=20mm,					% linker Seitenrand f�rs Binden
+%\usepackage[left=20mm,					% linker Seitenrand f�rs Binden
 						%right=20mm,					% rechter Seitenrand
 						%top=25mm,					%	oberer Rand
 						%bottom=25mm,				% unterer Rand
@@ -27,55 +68,22 @@
 						%lines=34,					% Rumpf Zeilenauslastung
 						%]{geometry}	
 
-
-\usepackage[Lenny]{fncychap} %fancy chapter headings						
-						 
+%% Header, Fooder, Chapter Headings and such %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{fancyhdr}
 \fancyhead{}  % Delete current header settings
 \fancyfoot{}  % Delete current footer settings         
 
 % pages and right on odd pages
 \fancyhead[L]{\nouppercase{\leftmark}}      % Chapter in the right on even pages
-\fancyhead[R]{\nouppercase{\rightmark}}     % Section in the left on odd pages
+%\fancyhead[R]{\nouppercase{\rightmark}}     % Section in the left on odd pages
 
 \fancyfoot[C]{\thepage}  % Page number (boldface) centered everywhere
 
 \renewcommand{\headwidth}{\textwidth} %set header width to text  width
 
-\usepackage[section]{placeins} %Keep figures within section.
+%\usepackage[Lenny]{fncychap} %fancy chapter headings						
 
-\usepackage{listings} 
-
-\usepackage{setspace}	% Zeilenabstand, MUSS vor hyperref kommen!
-	%\setstretch{1}		% Gr��e des Zeilenabstandes
-	
-%% Tables %%%
-
-\usepackage{booktabs} %use \toprule, \bottomrule & \midrule in tables 
-\usepackage{longtable}
-
-%% Bibliographiestil %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage[numbers,square,sort&compress]{natbib}
-
-%% Font Settings  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\usepackage{lmodern} %enhanced versions of the Computer Modern fonts, which is the default
-	
-\usepackage{amssymb,amsmath} %formelsatz
-
-\usepackage[pdfstartview={FitV},hidelinks]{hyperref} %enables typesetting of followable hyperlinks
-\usepackage{url}	%creates clickable urls by entering \url{http://www.url.de}
-
-\usepackage{nicefrac} %nice fractions
-
-\usepackage{units} %setting units in a typographically correct way
-\usepackage{upgreek} %upright typesetting for greek symbols (eg. \upmu and \Upmu
-
-\usepackage[version=3]{mhchem} %use of subscripts within the text environment to typeset chemical formulas, use like \ce{H2O}
-
-\usepackage{epigraph} %good looking quotes
-
-%% Special Tricks %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Special Tricks %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Line break after \paragraph{Paragraph Name}						
 \makeatletter
@@ -85,14 +93,12 @@
   {\normalfont\normalsize\bfseries}}
 \makeatother
 
-
-% Kreis um Zahl, use as \myCircle{Zahl} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Kreis um Zahl, use as \myCircle{Zahl} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\myCircle}[1]{ \unitlength1ex\begin{picture}(2.5,2.5)%
 \put(0.75,0.75){\circle{2.5}}\put(0.75,0.75){\makebox(0,0){#1}}\end{picture}} 
 
-
-%% Source code printer for LATEX - Code direct in the .tex file %%%%%%%%%%%%%
-\usepackage{listings}
+%% Source code printer for LATEX - Code direct in the .tex file %%%%%%%%%%%%%%%
+\usepackage{listings} %highlighting of all the most common languages 
 \usepackage{color}
  
 \definecolor{dkgreen}{rgb}{0,0.6,0}
@@ -125,3 +131,6 @@
   escapeinside={\%*}{*)},            % add a comment within your code
   morekeywords={*,ParallelTable, ParallelMap, Blur, ImageResize, ColorConvert, ImageDimensions, ImageData, ImageTake, ErrorListPlot} % if you want to add more keywords to the set
 }
+
+
+
